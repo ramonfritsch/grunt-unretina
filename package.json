@@ -28,16 +28,14 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.4",
-    "async": "~0.2.10",
-    "mkdirp": "~0.3.5",
-    "time-grunt": "~0.3.1"
+    "grunt-contrib-jshint": "^0.6.0",
+    "grunt-contrib-clean": "^0.4.0",
+    "grunt-contrib-nodeunit": "^0.2.0",
+    "grunt": "^0.4.4",
+    "time-grunt": "^0.3.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.4"
+    "grunt": "^0.4.0"
   },
   "keywords": [
     "unretina",
@@ -46,8 +44,8 @@
     "resolution"
   ],
   "dependencies": {
-    "async": "~0.2.10",
-    "mkdirp": "~0.3.5",
-    "gm": "~1.14.2"
+    "async": "^0.2.10",
+    "mkdirp": "^0.3.5",
+    "gm": "^1.14.2"
   }
 }

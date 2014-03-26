@@ -66,7 +66,7 @@ module.exports = function(grunt) {
             callback(err);
 
           } else {
-            if (size.width % 2 != 0 || size.height % 2 != 0)
+            if (size.width % 2 !== 0 || size.height % 2 !== 0)
             {
               grunt.log.warn("Image " + filepath + " has dimentions not divisible by 2");
               return callback();

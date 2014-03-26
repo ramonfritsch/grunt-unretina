@@ -35,7 +35,7 @@ exports.unretina = {
     .size(function (err, destSize) {
       gm("test/fixtures/test@2x.png")
       .size(function (err, srcSize) {
-        test.ok(srcSize.width / 2 == destSize.width && srcSize.height / 2 == destSize.height, "should resize in half");
+        test.ok(srcSize.width / 2 === destSize.width && srcSize.height / 2 === destSize.height, "should resize in half");
 
         test.done();
       });
@@ -48,7 +48,7 @@ exports.unretina = {
     .size(function (err, destSize) {
       gm("test/fixtures/nested/nested/test@2x.png")
       .size(function (err, srcSize) {
-        test.ok(srcSize.width / 2 == destSize.width && srcSize.height / 2 == destSize.height, "should resize in half");
+        test.ok(srcSize.width / 2 === destSize.width && srcSize.height / 2 === destSize.height, "should resize in half");
 
         test.done();
       });
