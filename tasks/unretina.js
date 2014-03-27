@@ -73,7 +73,7 @@ module.exports = function(grunt) {
             }
 
             gm(filepath)
-            .quality(options.quality)
+            .quality(options.quality * 100)
             .resize("50%", "50%", "!")
             .write(dest, function (err) {
               if (err)
