@@ -94,6 +94,7 @@ grunt.initConfig({
     resize: {
       files: [
       	{ src: "**/*@2x.png", dest: "tmp/", expand: true, "cwd/test/fixtures/" }
+      ]
     }
   }
 })
