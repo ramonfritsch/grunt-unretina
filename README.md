@@ -37,7 +37,7 @@ Windows & others:
 
 [ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/](ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/)
 
-Confirm that GraaphicsMagick is properly set up by executing `gm convert -help` in a terminal.
+Confirm that GraphicsMagick is properly set up by executing `gm convert -help` in a terminal.
 
 ## The "unretina" task
 
@@ -65,11 +65,11 @@ Default value: `true`
 
 Determines whether file that already exist under this destination will be overwritten.
 
-#### options.sufixies
+#### options.suffixes
 Type: `Array`
 Default value: `["@2x", "-hd"]`
 
-List of sufixies that are stripped out of the dest file when using multiple files with expand option on.
+List of suffixes that are stripped out of the dest file when using multiple files with expand option on.
 
 #### options.concurrency
 Type: `Number`
@@ -90,10 +90,10 @@ In this example, the default options are used to resize an image to 100px width.
 
 ```js
 grunt.initConfig({
-  image_resize: {
+  unretina: {
     resize: {
       files: [
-      	{ src: "**/*@2x.png", dest: "tmp/", expand: true, "cwd/test/fixtures/" }
+      	{ src: "**/*@2x.png", dest: "tmp/", expand: true, cwd: "test/fixtures/" }
       ]
     }
   }

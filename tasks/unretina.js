@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       overwrite: true,
       quality: 1,
       concurrency: os.cpus().length,
-      sufixes: [
+      suffixes: [
         "@2x",
         "-hd"
       ]
@@ -34,15 +34,15 @@ module.exports = function(grunt) {
       // Fail for more than one source file per file group.
       if (f.src.length !== 1)
       {
-        return grunt.fail.fatal("Can not resize more than one image per destination.\n You need to use a different 'files' format in your Gruntfile.");
+        return grunt.fail.fatal("Can not resize more than one image per destination.\nYou need to use a different 'files' format in your Gruntfile.");
       }
 
       var dirname = path.dirname(f.dest);
       var filepath = f.src[0];
       var name = path.basename(f.dest);
 
-      options.sufixes.forEach(function (sufix) {
-        name = name.split(sufix).join("");
+      options.suffixes.forEach(function (suffix) {
+        name = name.split(suffix).join("");
       });
 
       var dest = path.join(dirname, name);
@@ -53,22 +53,22 @@ module.exports = function(grunt) {
         grunt.file.mkdir(dirname);
       }
 
-      if (options.overwrite === false && grunt.file.isFile(f.dest))
+      if (options.overwrite === false && grunt.file.isFile(dest))
       {
-        return grunt.log.writeln("Skipping " + filepath + " because destination already exists.\n Set options 'overwrite' to true to enable overwriting of files.");
+        return grunt.log.writeln("Skipping " + filepath + " because destination already exists.\nSet options 'overwrite' to true to enable overwriting of files.");
       }
 
       series.push(function(callback) {
         gm(filepath)
         .size(function(err, size) {
           if (err) {
-            grunt.fatal("Failed to query image dimensions of '" + filepath + "'.\n " + err);
+            grunt.fatal("Failed to query image dimensions of '" + filepath + "'.\n" + err);
             callback(err);
 
           } else {
-            if (size.width % 2 !== 0 || size.height % 2 !== 0)
+            if (!!((size.width|size.height)&1))
             {
-              grunt.log.warn("Image " + filepath + " has dimentions not divisible by 2");
+              grunt.log.warn("Image " + filepath + " has dimensions not divisible by 2");
               return callback();
             }
 
